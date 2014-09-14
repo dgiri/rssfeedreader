@@ -1,18 +1,18 @@
 <h1>Welcome to RSS feed reader</h1>
 
 <%= form_tag("/feedlist", method: "get", remote: true) do %>
-  <%= label_tag(:url, "Display feeds from url:") %>
-  <%= text_field_tag(:url) %>
+  <%= label_tag(:url, "Display feeds from url with Ruby RSS parser:") %><br/>
+  <%= text_field_tag(:url,'', :size => 80) %>
   <%= submit_tag("Check") %>
 <% end %>
 
 <h1>OR</h1>
 
 <%= form_tag("/withfeedjira", method: "get", remote: true) do %>
-  <%= label_tag(:url, "Display feeds from url:") %>
-  <%= text_field_tag(:url) %>
+  <%= label_tag(:url, "Display feeds from url with feedjira gem:") %><br/>
+  <%= text_field_tag(:url,'', :size => 80) %>
   <%= submit_tag("Check") %>
 <% end %>
-
+<br/>
 
 <div id="feed_container"></div>

@@ -1,5 +1,5 @@
-<% unless @errors %>
-	$("#feed_container").html('<%= escape_javascript(render :partial=>"rssfeeds/feed_list", :locals => {:title => @title, :items => @rssitems}) %>');
+<% if defined?(@errors) %>
+	$("#feed_container").html('<%= @errors %>');
 <% else %>
-	$("#feed_container").html('<%= @error %>');
+	$("#feed_container").html('<%= escape_javascript(render :partial=>"rssfeeds/feed_list", :locals => {:title => @title, :items => @rssitems}) %>');
 <% end %>
