@@ -1,0 +1,18 @@
+<h1>Welcome to RSS feed reader</h1>
+
+<%= form_tag("/feedlist", method: "get", remote: true) do %>
+  <%= label_tag(:url, "Display feeds from url:") %>
+  <%= text_field_tag(:url) %>
+  <%= submit_tag("Check") %>
+<% end %>
+
+<h1>OR</h1>
+
+<%= form_tag("/withfeedjira", method: "get", remote: true) do %>
+  <%= label_tag(:url, "Display feeds from url:") %>
+  <%= text_field_tag(:url) %>
+  <%= submit_tag("Check") %>
+<% end %>
+
+
+<div id="feed_container"></div>

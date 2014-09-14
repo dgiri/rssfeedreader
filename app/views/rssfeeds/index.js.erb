@@ -1,0 +1,1 @@
+$("#feed_container").html('<%= escape_javascript(render :partial=>"rssfeeds/feed_list", :locals => {:title => @title, :items => @rssitems}) %>');

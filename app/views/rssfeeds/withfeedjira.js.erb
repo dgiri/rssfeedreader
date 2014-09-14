@@ -1,0 +1,5 @@
+<% unless @errors %>
+	$("#feed_container").html('<%= escape_javascript(render :partial=>"rssfeeds/feed_list", :locals => {:title => @title, :items => @rssitems}) %>');
+<% else %>
+	$("#feed_container").html('<%= @error %>');
+<% end %>
