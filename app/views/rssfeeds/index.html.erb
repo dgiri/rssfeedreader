@@ -2,16 +2,16 @@
 
 <%= form_tag("/feedlist", method: "get", remote: true) do %>
   <%= label_tag(:url, "Display feeds from url with Ruby RSS parser:") %><br/>
-  <%= text_field_tag(:url,'', :size => 80) %>
-  <%= submit_tag("Check") %>
+  <%= text_field_tag(:url,'', :size => 80, :id => "simplerssurl") %>
+  <%= submit_tag("Check", :id => "submit_simplerssurl" ) %>
 <% end %>
 
 <h1>OR</h1>
 
 <%= form_tag("/withfeedjira", method: "get", remote: true) do %>
   <%= label_tag(:url, "Display feeds from url with feedjira gem:") %><br/>
-  <%= text_field_tag(:url,'', :size => 80) %>
-  <%= submit_tag("Check") %>
+  <%= text_field_tag(:url,'', :size => 80, :id => "rsswithfeedjira") %>
+  <%= submit_tag("Check", :id => "submit_rsswithfeedjira") %>
 <% end %>
 <br/>
 

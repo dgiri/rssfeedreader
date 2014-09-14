@@ -9,3 +9,10 @@ development: &DEFAULTS
     min_messages: WARNING
     template: template0
     port: 5432
+
+test: &test
+  <<: *DEFAULTS
+  database: rssfeedreader_test
+  
+cucumber:
+  <<: *test
