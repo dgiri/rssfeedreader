@@ -1,0 +1,7 @@
+<% unless @rssfeed.errors.blank? %>
+  <% @rssfeed.errors.full_messages.each do |msg| %>
+    $("#error_explanation").append("<%= msg %>")
+  <% end %>
+<% else %>
+	window.location.reload();
+<% end %>

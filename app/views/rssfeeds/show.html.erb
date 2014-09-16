@@ -1,0 +1,19 @@
+<p>
+<h1><%= @rssfeed.feedurl %><h1>
+
+<% rssitem_html_view(@rssfeed) %>
+<h3><%= @title %></h3>
+<hr>
+<% @subitems.each do |item| %>
+	<p><%= item.title %></p>
+	<% if item.class.name == "Feedjira::Parser::RSSEntry" %>
+		<p><a href="<%= item.url %>"><%= item.url %></a></p>
+	<% else %>
+		<p><a href="<%= item.link %>"><%= item.link %></a></p>
+	<% end %>
+<% end %>
+<hr>
+<%= link_to 'Edit', edit_rssfeed_path(@rssfeed), :class => "btn btn-default active" %> |
+<%= link_to 'Back', rssfeeds_path, :class => "btn btn-default active" %> |
+<%= link_to 'Destroy', rssfeed_path(@rssfeed, :authenticity_token => form_authenticity_token), method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-default active" %>
+</p>

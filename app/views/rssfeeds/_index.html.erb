@@ -1,0 +1,22 @@
+<% @rssfeeds.each do |rssfeed| %>
+	<% rssitem_html_view(rssfeed) %>
+	<h3><%= @title %></h3>
+	<hr>
+	<%#= @subitems.first.inspect %>
+	<% @subitems.each do |item| %>
+		<blockquote>
+			<h3><%= item.title.html_safe %></h3>
+	  		<% if item.class.name == "Feedjira::Parser::RSSEntry" %>
+				<p><a href="<%= item.url %>"><%= item.url %></a></p>
+			<% else %>
+				<p><a href="<%= item.link %>"><%= item.link %></a></p>
+			<% end %>
+		</blockquote>
+		
+		<p><%= item.description.html_safe unless item.description.blank? %></p>
+		<br/>
+	<% end %>
+
+<% end %>
+
+<%= will_paginate @rssfeeds, renderer: BootstrapPagination::Rails %>

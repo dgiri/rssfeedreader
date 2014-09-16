@@ -1,18 +1,20 @@
-<h1>Welcome to RSS feed reader</h1>
 
-<%= form_tag("/feedlist", method: "get", remote: true) do %>
-  <%= label_tag(:url, "Display feeds from url with Ruby RSS parser:") %><br/>
-  <%= text_field_tag(:url,'', :size => 80, :id => "simplerssurl") %>
-  <%= submit_tag("Check", :id => "submit_simplerssurl" ) %>
-<% end %>
+<!-- Nav tabs -->
+<ul class="nav nav-tabs" role="tablist">
+  <li class="active"><a href="#allcontents" role="tab" data-toggle="tab">All Contents</a></li>
+  <li><a href="#feeds" role="tab" data-toggle="tab">Feeds</a></li>
+  <li><a href="#newfeed" role="tab" data-toggle="tab">Add New URL</a></li>
+</ul>
 
-<h1>OR</h1>
-
-<%= form_tag("/withfeedjira", method: "get", remote: true) do %>
-  <%= label_tag(:url, "Display feeds from url with feedjira gem:") %><br/>
-  <%= text_field_tag(:url,'', :size => 80, :id => "rsswithfeedjira") %>
-  <%= submit_tag("Check", :id => "submit_rsswithfeedjira") %>
-<% end %>
-<br/>
-
-<div id="feed_container"></div>
+<!-- Tab panes -->
+<div class="tab-content tabbody">
+  <div class="tab-pane active" id="allcontents">
+    <%= render :partial => "rssfeeds/index" %>
+  </div>
+  <div class="tab-pane" id="feeds">
+    <%= render :partial => "rssfeeds/list" %>
+  </div>
+  <div class="tab-pane" id="newfeed">
+    <%= render :partial => 'rssfeeds/form' %>
+  </div>
+</div>

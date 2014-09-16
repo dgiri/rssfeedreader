@@ -1,0 +1,5 @@
+<ul>
+	<% @feedsurls.each do |rssfeed| %>
+  		<li><a href="/rssfeeds/<%= rssfeed.id %>"><%= rssfeed.feedurl %></a></li>
+  	<% end %>
+</ul>

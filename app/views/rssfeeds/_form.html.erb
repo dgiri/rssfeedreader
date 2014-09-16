@@ -1,0 +1,19 @@
+<%= form_for(@rssfeed) do |f| %>
+  <% if @rssfeed.errors.any? %>
+    <div id="error_explanation">
+      <ul>
+      <% @rssfeed.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :feedurl %><br />
+    <%= f.text_field :feedurl, :size => 80, :class => "form-control" %>
+  </div>
+  <div class="actions">
+    <button type="submit" class="btn btn-primary" value="Create Rssfeed" name="commit">Submit</button>
+  </div>
+<% end %>

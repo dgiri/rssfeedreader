@@ -1,0 +1,26 @@
+body {
+  padding-top: 50px;
+}
+.starter-template {
+  padding: 40px 15px;
+  text-align: center;
+}
+.main-display-content{
+	padding-top: 20px;
+}
+.flash-content{
+	padding-top: 20px;
+}
+.tabbody{
+	padding: 10px;
+}
+.text-white {
+    color: white;
+}
+.username-info{
+	padding-top: 15px;
+	margin-right: 20px;
+}
+img{
+	padding: 5px;
+}

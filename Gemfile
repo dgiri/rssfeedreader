@@ -7,8 +7,10 @@ gem 'rails', '3.2.14'
 
 gem 'sqlite3'
 gem 'pg'
-gem 'feedtools'
+# gem 'feedtools'
 gem 'feedjira'
+gem 'devise'
+gem 'will_paginate-bootstrap'
 
 group :test do
   gem 'rspec-rails'

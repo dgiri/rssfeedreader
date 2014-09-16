@@ -2,4 +2,9 @@
 <hr>
 <% items.each do |item| %>
 	<p><%= item.title %></p>
+	<% if item.class.name == "Feedjira::Parser::RSSEntry" %>
+		<p><a href="<%= item.url %>"><%= item.url %></a></p>
+	<% else %>
+		<p><a href="<%= item.link %>"><%= item.link %></a></p>
+	<% end %>
 <% end %>
